@@ -1,0 +1,354 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Contenedor */
+.container {
+    width: 80%;
+    max-width: 600px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    animation: slideIn 1s ease-out;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+}
+
+/* Logo con giro completo */
+.logo {
+    width: 50px;
+    height: auto;
+    transition: transform 0.5s ease-in-out;
+}
+
+.logo:hover {
+    transform: rotate(360deg);
+}
+
+/* Botón de menú */
+.menu {
+    padding: 8px 15px;
+    background: #ff6600;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.2s ease-in-out, background 0.3s;
+}
+
+.menu:active {
+    transform: scale(0.9);
+}
+
+.menu:hover {
+    background: #e65c00;
+}
+
+/* Carrito */
+.cart {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Productos con animación de rebote */
+.product {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    
+    transform: scale(0.9);
+    animation: bounceIn 0.8s ease-out forwards;
+}
+
+/* Aparecen en secuencia */
+.product:nth-child(1) { animation-delay: 0.2s; }
+.product:nth-child(2) { animation-delay: 0.4s; }
+.product:nth-child(3) { animation-delay: 0.6s; }
+
+/* Hover en imágenes */
+.product img {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.product:hover img {
+    transform: scale(1.1);
+}
+
+/* Efecto parpadeo en precios */
+.product p {
+    font-weight: bold;
+    color: #28a745;
+    animation: blink 1.5s infinite;
+}
+
+/* Métodos de pago */
+.payment {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Botón de pago con efecto vibrante */
+.pay-button {
+    padding: 10px 20px;
+    background: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.pay-button:hover {
+    background: #218838;
+    animation: vibrate 0.3s infinite;
+}
+
+/* Alineación de textos */
+.p {
+    text-align: right;
+}
+/* Quitar el color azul y el subrayado de los enlaces */
+.product a {
+    text-decoration: none; /* Quita el subrayado */
+    color: inherit; /* Usa el color del texto normal */
+}
+
+/* Efecto de clic en imágenes y nombres */
+.clickable {
+    transition: transform 0.1s ease-in-out;
+}
+
+.clickable:active {
+    transform: scale(0.9);
+}
+/* Ajustar el tamaño y la posición del apartado de puntos */
+.product p {
+    font-size: 12px; /* Tamaño de letra más pequeño */
+    color: #ff6600; /* Color gris para que no resalte demasiado */
+    margin-top: auto; /* Empuja el texto hacia la parte inferior */
+    text-align: right; /* Alinea el texto a la derecha */
+    width: 100%; /* Asegura que ocupe toda la anchura */
+}
+
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    60% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+@keyframes vibrate {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    50% { transform: translateX(2px); }
+    75% { transform: translateX(-2px); }
+    100% { transform: translateX(0); }
+}
+.counter {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.counter button {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.confirm-button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.cancel-button {
+    background: #f44336;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+/* Animación de entrada y salida del modal */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeOutScale {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
+
+/* Estilo del modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor del modal con animación */
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Cuando el modal está activo */
+.modal.show {
+    display: flex;
+}
+
+.modal.show .modal-content {
+    animation: fadeInScale 0.3s forwards;
+}
+
+/* Animación de cierre */
+.modal.hide .modal-content {
+    animation: fadeOutScale 0.3s forwards;
+}
+
+/* Botón de cierre */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Botones dentro del modal */
+.confirm-button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.cancel-button {
+    background: #f44336;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.confirm-button:hover {
+    background: #45a049;
+}
+
+.cancel-button:hover {
+    background: #d32f2f;
+}

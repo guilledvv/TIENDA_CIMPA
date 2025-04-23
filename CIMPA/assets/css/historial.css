@@ -1,0 +1,53 @@
+body3 {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0a7;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.historial-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+.compra {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    position: relative;
+}
+.compra:nth-child(odd) {
+    background-color: #ffffff;
+}
+.compra:nth-child(even) {
+    background-color: #f8f8f8;
+}
+.compra img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+.info {
+    flex-grow: 1;
+}
+.info p {
+    margin: 5px 0;
+}
+.green-box {
+    background-color: green;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    text-align: center;
+    white-space: nowrap;
+}
